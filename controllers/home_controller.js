@@ -3,6 +3,3 @@ module.exports.home = function(req, res){
 }
 
 //module.exports.actionName = function(res,res){}
-module.exports.user = function(req,res){
-  return res.end("<p> Hey Its me User </p>");
-}
