@@ -7,6 +7,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 body{
   min-height: 100vh;
   width: 100%;
@@ -81,10 +84,14 @@ body{
 }
 
 /* To do form */
+#workspace{
+  height: 90vh;
+}
 #todo_form{
   font-family: var(--text-font);
   font-size: 2rem;
   text-transform: capitalize;
+  font-weight: 800;
 }
 #todo_form>p{
   margin-top: 30px;
@@ -93,14 +100,16 @@ body{
   padding-left: 0.5%;
 }
 #p1>textarea{
-  height: 70px;
+  height: 80px;
   width: 100%;
   font-family: var(--text-font);
   font-size: large;
   font-weight: 800;
   background-color: #e7f0f4;
   border: transparent;
-  padding-top: 1px;
+  padding-top: 0.5%;
+  padding-left: 0.5%;
+
 }
 #p2{
   display: flex;
@@ -139,14 +148,44 @@ body{
   width: 70px;
   font-family: var(--text-font);
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: bolder;
   border-radius: 10px;
   cursor: pointer;
+  transition: transform ease-in-out 100ms;
+}
+#add_task:hover,#delete_task:hover{
+  transform: scale(1.1);
 }
 #add_task{
-  background-color: #66a166;
+  /* background-color: #66a166; */
+  background: hsla(175, 79%, 63%, 1);
+
+  background: linear-gradient(90deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
+  
+  background: -moz-linear-gradient(90deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
+  
+  background: -webkit-linear-gradient(90deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#57EBDE", endColorstr="#AEFB2A", GradientType=1 );
+
 }
 #delete_task{
-  background-color: #f83e3e;
+  background: hsla(52, 82%, 52%, 1);
+
+background: linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9D022", endColorstr="#E60B09", GradientType=1 );
   width: 100px;
+}
+#p4{
+  padding-left: .5%;
+}
+
+#p4>input{
+  height: 23px;
+  width: 23px;
 }
