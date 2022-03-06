@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
   <title>
-    ToDo List
+    <%=list%>
   </title>
 </head>
 <body>
@@ -31,17 +31,17 @@
     </div>
   </figure>
   <div id="workspace">
-    <form action="" id="todo_form">
+    <form action="/add" method="POST" id="todo_form">
       <p id="p1">
         <label for="description">description</label><br>
-        <textarea type="text" id="description" placeholder="What you want to do?"></textarea>
+        <textarea type="text" id="description" name="description"  placeholder="What you want to do?"></textarea>
       </p>
       <p id="p2">
         <span>
           <label for="category">
             category
           </label>
-          <select name="category" id="category">
+          <select name="category" id="category" >
             <option value="personal">personal</option>
             <option value="work">work</option>
             <option value="school">school</option>
@@ -50,19 +50,35 @@
           </select>
         </span>
         <span>
-          <label for="due-date">due date</label>
-          <input type="date" name="due-date" id="due-date">
+          <label for="duedate">due date</label>
+          <input type="date" name="duedate" id="duedate" >
         </span>
       </p>
       <p id="p3">
-        <button id="add_task">add</button>
+        <button type="submit" id="add_task">add</button>
         <button id="delete_task"> delete</button>
       </p>
       <hr>
 
       <p id="p4">
-        <input type="checkbox" name="dummy" id="dummy">
-        <label for="duumy">It's is a dummy text</label>
+        <% for(let i of user_List){%> 
+            <input type="checkbox" name="<%=i.discription%>" id=<%=i.discription%>>
+            <label for="">
+              <div class="content">
+                <p class="task"><%=i.discription%></p>
+                <p class="identity"><%=i.category%></p>
+              </div>
+              <p class="d-date">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="24" height="24"
+                viewBox="0 0 172 172"
+                style=" fill:#000000;"><g transform="translate(0.516,0.516) scale(0.994,0.994)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g id="Layer_1 1" stroke="#000000" stroke-linejoin="round"><path d="M133.03125,166.625h-94.0625c-14.84844,0 -26.875,-12.02656 -26.875,-26.875v-86c0,-14.84844 12.02656,-26.875 26.875,-26.875h94.0625c14.84844,0 26.875,12.02656 26.875,26.875v86c0,14.84844 -12.02656,26.875 -26.875,26.875z" fill="#ffffff"></path><path d="M163.9375,53.75v33.59375c0,2.23062 -1.80062,4.03125 -4.03125,4.03125c-2.23063,0 -4.03125,-1.80063 -4.03125,-4.03125v-29.5625h-139.75v81.96875c0,12.59094 10.25281,22.84375 22.84375,22.84375h48.375c2.23062,0 4.03125,1.80062 4.03125,4.03125c0,2.23063 -1.80063,4.03125 -4.03125,4.03125h-48.375c-17.03875,0 -30.90625,-13.8675 -30.90625,-30.90625v-86c0,-17.03875 13.8675,-30.90625 30.90625,-30.90625h9.40625v-17.46875c0,-2.23063 1.80063,-4.03125 4.03125,-4.03125c2.23062,0 4.03125,1.80062 4.03125,4.03125v17.46875h59.125v-17.46875c0,-2.23063 1.80063,-4.03125 4.03125,-4.03125c2.23062,0 4.03125,1.80062 4.03125,4.03125v17.46875h9.40625c17.03875,0 30.90625,13.8675 30.90625,30.90625zM16.50125,49.71875h138.9975c-1.90813,-10.68281 -11.24719,-18.8125 -22.4675,-18.8125h-94.0625c-11.22031,0 -20.55937,8.12969 -22.4675,18.8125z" fill="#444b54"></path><path d="M95.40625,133.03125c0,-20.77971 16.84529,-37.625 37.625,-37.625c20.77971,0 37.625,16.84529 37.625,37.625c0,20.77971 -16.84529,37.625 -37.625,37.625c-20.77971,0 -37.625,-16.84529 -37.625,-37.625z" fill="#71c2ff"></path><path d="M142.53156,146.56281c-1.03469,0 -2.06938,-0.38969 -2.84875,-1.1825l-9.50031,-9.50031c-0.7525,-0.7525 -1.1825,-1.77375 -1.1825,-2.84875v-13.4375c0,-2.23062 1.80062,-4.03125 4.03125,-4.03125c2.23063,0 4.03125,1.80063 4.03125,4.03125v11.77125l8.31781,8.31781c1.57219,1.57219 1.57219,4.12531 0,5.6975c-0.77938,0.79281 -1.81406,1.1825 -2.84875,1.1825z" fill="#ffffff"></path></g><path d="M0,172v-172h172v172z" fill="none" stroke="none" stroke-linejoin="miter"></path><g id="Layer_1" stroke="none" stroke-linejoin="miter"><path d="M133.03125,166.625h-94.0625c-14.84844,0 -26.875,-12.02656 -26.875,-26.875v-86c0,-14.84844 12.02656,-26.875 26.875,-26.875h94.0625c14.84844,0 26.875,12.02656 26.875,26.875v86c0,14.84844 -12.02656,26.875 -26.875,26.875z" fill="#ffffff"></path><path d="M133.03125,22.84375h-9.40625v-17.46875c0,-2.23063 -1.80063,-4.03125 -4.03125,-4.03125c-2.23062,0 -4.03125,1.80062 -4.03125,4.03125v17.46875h-59.125v-17.46875c0,-2.23063 -1.80063,-4.03125 -4.03125,-4.03125c-2.23062,0 -4.03125,1.80062 -4.03125,4.03125v17.46875h-9.40625c-17.03875,0 -30.90625,13.8675 -30.90625,30.90625v86c0,17.03875 13.8675,30.90625 30.90625,30.90625h48.375c2.23062,0 4.03125,-1.80062 4.03125,-4.03125c0,-2.23063 -1.80063,-4.03125 -4.03125,-4.03125h-48.375c-12.59094,0 -22.84375,-10.25281 -22.84375,-22.84375v-81.96875h139.75v29.5625c0,2.23062 1.80062,4.03125 4.03125,4.03125c2.23063,0 4.03125,-1.80063 4.03125,-4.03125v-33.59375c0,-17.03875 -13.8675,-30.90625 -30.90625,-30.90625zM38.96875,30.90625h94.0625c11.22031,0 20.55937,8.12969 22.4675,18.8125h-138.9975c1.90813,-10.68281 11.24719,-18.8125 22.4675,-18.8125z" fill="#444b54"></path><circle cx="99" cy="99" transform="scale(1.34375,1.34375)" r="28" fill="#71c2ff"></circle><path d="M142.53156,146.56281c-1.03469,0 -2.06938,-0.38969 -2.84875,-1.1825l-9.50031,-9.50031c-0.7525,-0.7525 -1.1825,-1.77375 -1.1825,-2.84875v-13.4375c0,-2.23062 1.80062,-4.03125 4.03125,-4.03125c2.23063,0 4.03125,1.80063 4.03125,4.03125v11.77125l8.31781,8.31781c1.57219,1.57219 1.57219,4.12531 0,5.6975c-0.77938,0.79281 -1.81406,1.1825 -2.84875,1.1825z" fill="#ffffff"></path></g><path d="" fill="none" stroke="none" stroke-linejoin="miter"></path><path d="" fill="none" stroke="none" stroke-linejoin="miter"></path></g></g></svg>
+                <%=i.duedate%></p>
+              
+            </label>
+        <% }%>
+        <!-- <input type="checkbox" name="dummy" id="dummy">
+        <label for="duumy">It's is a dummy text</label> -->
       </p>
     </form>
   </div>
