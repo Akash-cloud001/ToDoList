@@ -14,7 +14,7 @@ body{
   min-height: 100vh;
   width: 100%;
   position: relative;
-
+  margin-bottom: 50px;
   background: -webkit-linear-gradient(to right, #78aec1, #fff);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right,#78aec1, #fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   /* overflow: hidden; */
@@ -42,10 +42,15 @@ body{
   width: 500px;
   cursor: pointer;
 }
-.intro>div{
+#project-name{
   padding-left: 18px;
+  height: 140px;
 }
-.intro>div>span{
+#project-name > div{
+  height: 70px;
+  margin-top: 10px;
+}
+#project-name >div>span{
   display: inline-block;
   font-size: 4rem;
   font-family: var(--text-font);
@@ -54,34 +59,12 @@ body{
   transition: font-size ease-in 50ms;
   text-transform: lowercase;
 }
-.intro>div>span:hover{
+#project-name>div>span:hover{
   font-size: 5rem;
   /* text-decoration: line-through; */
   text-transform: uppercase;
+}
 
-}
-#btn-move{
-  position: relative;
-  border: 2px solid ;
-  height: 50px;
-  width: 140px;
-  border-radius: 20px;
-}
-#btn-move>a{
-  position:absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  text-decoration: none;
-  font-family: var(--text-font);
-  font-size: 16px;
-  font-weight: 600;
-  color:#3A1C71 ;
-  transition: font-size ease-in 150ms;
-}
-#btn-move>a:hover{
-  font-size: 18px;
-}
 
 /* To do form */
 #workspace{
@@ -181,23 +164,42 @@ background: -webkit-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9D022", endColorstr="#E60B09", GradientType=1 );
   width: 100px;
 }
-#p4{
-  padding-left: .5%;
-}
 
-#p4>input{
+.data-input{
   height: 20px;
   width: 20px;
+  margin-left: .5%;
 }
 
+#todo_form h3{
+  text-align: center;
+  margin-top: 10px;
+  height: 60px;
+}
+#todo_form h3>span{
+  text-transform: lowercase;
+  transition: font-size ease-in 50ms;
+}
+#todo_form h3>span:hover{
+  font-size: 3rem;
+  /* text-decoration: line-through; */
+  text-transform: uppercase;
+}
 /* BackEnd */
+
 .content{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.5rem;
+  display: grid;
+  font-size: 1.2rem;
+  grid-template-columns: .5fr 2fr .5fr .75fr;
+}
+.content>p{
+  display: inline-block;
+  margin: 10px 10px;
+}
+.identity{
+  text-align: center;
 }
 .d-date{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: end;
 }

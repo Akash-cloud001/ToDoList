@@ -1,6 +1,7 @@
 const express = require('express');
 const { path } = require('express/lib/application');
 const db = require('./models/user');
+const User_info = require('./models/user');
 const app = express();
 const port = 8000;
 //for static files

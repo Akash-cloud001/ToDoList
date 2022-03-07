@@ -15,24 +15,21 @@ db.once('open', function(){
   console.log('succcessfuly connected to database');
 })
 
-// const userSchema = new mongoose.Schema({
-//   email: {
-//     type: String,
-//     required: true,
-//     unique: true
-//   },
-//   password:{
-//     type:String,
-//     required:true
-//   },
-//   name:{
-//     type:String,
-//     required:true
-//   }
-// }, {
-//   timestamps: true  //it is created at and updated at
-// });
+const userSchema = new mongoose.Schema({
+  description: {
+    type: String,
+    required: true,
+  },
+  category:{
+    type:String,
+    required:true
+  },
+  duedate:{
+    type:String,
+    required:true
+  }
+},);
 
-// const User = mongoose.model('User', userSchema);
+const User_info = mongoose.model('User_info', userSchema);
 
-// module.exports = User;
+module.exports = User_info;
