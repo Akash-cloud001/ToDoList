@@ -18,6 +18,7 @@ body{
   background: -webkit-linear-gradient(to right, #78aec1, #fff);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right,#78aec1, #fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   /* overflow: hidden; */
+  cursor: context-menu;
 
 }
 .header-img{
@@ -125,8 +126,11 @@ body{
   display: flex;
   justify-content: space-around;
   margin-bottom: 50px;
+}#p3 img{
+  height: 10px;
+  width: 10px;
 }
-#add_task,#delete_task{
+#add_task{
   height: 50px;
   width: 70px;
   font-family: var(--text-font);
@@ -136,7 +140,7 @@ body{
   cursor: pointer;
   transition: transform ease-in-out 100ms;
 }
-#add_task:hover,#delete_task:hover{
+#add_task:hover{
   transform: scale(1.1);
 }
 #add_task{
@@ -151,18 +155,6 @@ body{
   
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#57EBDE", endColorstr="#AEFB2A", GradientType=1 );
 
-}
-#delete_task{
-  background: hsla(52, 82%, 52%, 1);
-
-background: linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
-
-background: -moz-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
-
-background: -webkit-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9D022", endColorstr="#E60B09", GradientType=1 );
-  width: 100px;
 }
 
 .data-input{
@@ -185,7 +177,41 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9D022", en
   /* text-decoration: line-through; */
   text-transform: uppercase;
 }
-/* BackEnd */
+
+
+/* DELETE Btn */
+#dlt_btn{
+  height: 40px;
+  width: 120px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  font-style: 'Josefin Sans', sans-serif;
+  align-items: center;
+  margin-inline: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  background: hsla(52, 82%, 52%, 1);
+
+  background: linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+  
+  background: -moz-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+  
+  background: -webkit-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9D022", endColorstr="#E60B09", GradientType=1 );
+  transition: transform ease-in-out 100ms;
+  width: 100px;
+}
+#dlt_btn:hover{
+  transform: scale(1.1);
+}
+#dlt_btn>a{
+  text-decoration: none;
+  color: black;
+}
+
+/* BackEnd Css */
 
 .content{
   display: grid;
