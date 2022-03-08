@@ -14,7 +14,7 @@ body{
   min-height: 100vh;
   width: 100%;
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   background: -webkit-linear-gradient(to right, #78aec1, #fff);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right,#78aec1, #fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   /* overflow: hidden; */
@@ -69,7 +69,7 @@ body{
 
 /* To do form */
 #workspace{
-  height: 90vh;
+  height: 55vh;
 }
 #todo_form{
   font-family: var(--text-font);
@@ -163,16 +163,19 @@ body{
   margin-left: .5%;
 }
 
-#todo_form h3{
+.task-list{
   text-align: center;
   margin-top: 10px;
   height: 60px;
+  font-family: var(--text-font);
+  font-size: 2rem;
+
 }
-#todo_form h3>span{
+.task-list>span{
   text-transform: lowercase;
   transition: font-size ease-in 50ms;
 }
-#todo_form h3>span:hover{
+.task-list>span:hover{
   font-size: 3rem;
   /* text-decoration: line-through; */
   text-transform: uppercase;
@@ -180,7 +183,7 @@ body{
 
 
 /* DELETE Btn */
-#dlt_btn{
+/* #dlt_btn{
   height: 40px;
   width: 120px;
   border: 2px solid black;
@@ -188,8 +191,11 @@ body{
   justify-content: center;
   font-style: 'Josefin Sans', sans-serif;
   align-items: center;
+  font-family: var(--text-font);
   margin-inline: auto;
+  font-weight: 800;
   border-radius: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
   background: hsla(52, 82%, 52%, 1);
 
@@ -209,23 +215,7 @@ body{
 #dlt_btn>a{
   text-decoration: none;
   color: black;
-}
+} */
 
 /* BackEnd Css */
 
-.content{
-  display: grid;
-  font-size: 1.2rem;
-  grid-template-columns: .5fr 2fr .5fr .75fr;
-}
-.content>p{
-  display: inline-block;
-  margin: 10px 10px;
-}
-.identity{
-  text-align: center;
-}
-.d-date{
-  font-size: 1.2rem;
-  text-align: end;
-}

@@ -7,6 +7,7 @@ console.log("router is loaded");
 
 router.get('/',homeController.home);
 router.post('/add',require('./task'));
+router.get('/delete',require('./delete'));
 //setting up the path for user through routes.js
 //router.use('/routername', require('./routerFile));
 
