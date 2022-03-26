@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/ba3ae6fb31.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="shortcut icon" href="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/65/000000/external-to-do-list-webmobile-applications-smashingstocks-circular-smashing-stocks.png" type="image/x-icon">
   <title>
     <%=list%>
   </title>
@@ -13,24 +14,26 @@
 <body>
 
   <figure class="header-img">
-    <img src="/images/5272-removebg.png" alt="todo_man">
+    
     <div class="intro">
-      <!-- <span>To Do</span><br><span>List</span> -->
-      <div id="project-name">
-        <div>
+      <div class="project-name">
+        <!-- <div> -->
           <span>T</span>
           <span>o</span>
           <span>D</span>
           <span>o</span>
-        </div>
-      <div>
+        <!-- </div> -->
+      <div class="project-name">
         <span>L</span>
         <span>i</span>
         <span>s</span>
         <span>t</span>
       </div>
-      </div>
+    </div>
     
+    </div>
+    <div id="img">
+      <img src="/images/5272-removebg.png" alt="todo_man">
     </div>
   </figure>
   <div id="workspace">
@@ -72,7 +75,7 @@
         <% for(let i of user_List) {%>  
               <div class="content" id="<%=i._id%>">
                 <p class="task"><%=i.description%></p>
-                <p class="identity"><%=i.category%></p>
+                <p class="identity" id="<%=i.category%>" ><%=i.category%></p>
                 <p class="d-date"><%=i.duedate%></p>
               </div>  
           <div class="dlt-btn">

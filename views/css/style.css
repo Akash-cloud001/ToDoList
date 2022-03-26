@@ -23,14 +23,19 @@ body{
 }
 .header-img{
   height: 100vh;
-  
+  display: grid;
+  margin-inline: auto;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 25% 75%;
+  width: 70%;
 }
-.header-img>img{
-  position: absolute;
-  right: 20%;
+#img{
   height: 500px;
+}
+#img>img{
+  height: 100%;
   width: 550px;
-  /* margin-right: -5px; */
 }
 .intro{
   display: flex;
@@ -39,30 +44,26 @@ body{
   align-items: center;
   margin-left: 10%;
   padding-left: 2%;
-  height: 500px;
   width: 500px;
   cursor: pointer;
+  gap: 50%;
 }
-#project-name{
+.project-name{
   padding-left: 18px;
-  height: 140px;
+   height: 100px;
+   margin-top: 20px;
 }
-#project-name > div{
-  height: 70px;
-  margin-top: 10px;
-}
-#project-name >div>span{
+.project-name>span{
   display: inline-block;
   font-size: 4rem;
   font-family: var(--text-font);
   font-weight: 800;
   color:#3A1C71 ;
-  transition: font-size ease-in 50ms;
+  transition: font-size ease-in 90ms;
   text-transform: lowercase;
 }
-#project-name>div>span:hover{
+.project-name>span:hover{
   font-size: 5rem;
-  /* text-decoration: line-through; */
   text-transform: uppercase;
 }
 
@@ -72,9 +73,9 @@ body{
   height: 55vh;
   backdrop-filter: blur(25px) saturate(200%);
   -webkit-backdrop-filter: blur(25px) saturate(200%);
-  background-color: rgba(255, 255, 255, 0.43);
+  background-color: rgb(130 130 162 / 43%);
   border-radius: 12px;
-  border: 1px solid rgba(209, 213, 219, 0.3);
+  border: 1px solid rgb(0 0 0 / 30%);
   width: 90%;
   margin-inline: auto;
 }
@@ -151,16 +152,11 @@ body{
   transform: scale(1.1);
 }
 #add_task{
-  /* background-color: #66a166; */
-  background: hsla(175, 79%, 63%, 1);
-
-  background: linear-gradient(90deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
-  
-  background: -moz-linear-gradient(90deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
-  
-  background: -webkit-linear-gradient(90deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
-  
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#57EBDE", endColorstr="#AEFB2A", GradientType=1 );
+  backdrop-filter: blur(6px) saturate(0%);
+    -webkit-backdrop-filter: blur(6px) saturate(0%);
+    background-color: rgb(89 151 159 / 52%);
+    border-radius: 12px;
+    border: 1px solid rgb(8 105 250 / 30%);
 
 }
 
@@ -184,47 +180,8 @@ body{
 }
 .task-list>span:hover{
   font-size: 3rem;
-  /* text-decoration: line-through; */
   text-transform: uppercase;
 }
-
-
-/* DELETE Btn */
-/* #dlt_btn{
-  height: 40px;
-  width: 120px;
-  border: 2px solid black;
-  display: flex;
-  justify-content: center;
-  font-style: 'Josefin Sans', sans-serif;
-  align-items: center;
-  font-family: var(--text-font);
-  margin-inline: auto;
-  font-weight: 800;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  background: hsla(52, 82%, 52%, 1);
-
-  background: linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
-  
-  background: -moz-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
-  
-  background: -webkit-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
-  
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9D022", endColorstr="#E60B09", GradientType=1 );
-  transition: transform ease-in-out 100ms;
-  width: 100px;
-}
-#dlt_btn:hover{
-  transform: scale(1.1);
-}
-#dlt_btn>a{
-  text-decoration: none;
-  color: black;
-} */
-
-/* BackEnd Css */
 
 #container{
   display: grid;
@@ -239,9 +196,9 @@ body{
   margin-inline: auto;
   backdrop-filter: blur(25px) saturate(200%);
   -webkit-backdrop-filter: blur(25px) saturate(200%);
-  background-color: rgba(255, 255, 255, 0.43);
+  background-color: rgb(130 130 162 / 43%);
   border-radius: 12px;
-  border: 1px solid rgba(209, 213, 219, 0.3);
+  border: 1px solid rgb(0 0 0 / 30%);
 }
 .content{
   display: grid;
@@ -251,3 +208,6 @@ body{
 .identity,.d-date{
   text-align: center;
 }
+
+
+/* Responsiveness */
