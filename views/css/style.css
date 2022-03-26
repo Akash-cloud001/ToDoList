@@ -29,6 +29,7 @@ body{
   justify-items: center;
   grid-template-columns: 25% 75%;
   width: 70%;
+  /* margin-top: -10px; */
 }
 #img{
   height: 500px;
@@ -43,6 +44,7 @@ body{
   justify-content: center;
   align-items: center;
   margin-left: 10%;
+  margin-top: -50%;
   padding-left: 2%;
   width: 500px;
   cursor: pointer;
@@ -51,8 +53,8 @@ body{
 .project-name{
   padding-left: 18px;
    height: 100px;
-   margin-top: 20px;
 }
+
 .project-name>span{
   display: inline-block;
   font-size: 4rem;
@@ -90,6 +92,8 @@ body{
 }
 #p1>label{
   padding-left: 0.5%;
+  margin-bottom: 11px;
+  display: inline-block;
 }
 #p1>textarea{
   height: 80px;
@@ -101,7 +105,7 @@ body{
   border: transparent;
   padding-top: 0.5%;
   padding-left: 0.5%;
-
+  background-color: rgb(255 255 255 / 50%);
 }
 #p2{
   display: flex;
@@ -114,7 +118,7 @@ body{
 #p2>span>select{
   height: 30px;
   width: 110px;
-  background-color: #e7f0f4;
+  background-color: rgb(255 255 255 / 50%);
   font-size: medium;
   font-family: var(--text-font);
   border: #78aec1;
@@ -123,7 +127,7 @@ body{
 #p2>span>input{
   height: 30px;
   width: 150px;
-  background-color: #e7f0f4;
+  background-color: rgb(255 255 255 / 50%);
   font-size: medium;
   margin-left: 0.5%;
   border: #60c2e6;
